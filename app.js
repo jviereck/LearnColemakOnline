@@ -1,25 +1,11 @@
 var editor;
-var input = document.getElementById('keyboardInput');
+var inputField;
 var currentMapping = '';
 var currentLession = {
     value: 0,
     index: 0,
     error: {}
-}
-
-var lessions = {
-    'Lession 1: stne': [
-        'sets tens ten tnt sestet tenet seen nene testee tenets essen sent senses',
-        'tenses teens stent sense tent nets tenseness net tense nests tennessee',
-        'teen nest tents net tens teen tenets senses nests nest nets tenet sent sense',
-        'tenses tennessee essen tnt tent teens tense nene stent seen'
-    ].join(' ')
 };
-
-var keymaps = {
-    'colemak':   ' qwfpgjluy;[]arstdhneio\'zxcvbkm,./QWFPGJLUY:{}ARSTDHNEIO"ZXCVBKM<>?',
-    'en:us-mac': ' qwertyuiop[]asdfghjkl;\'zxcvbnm,./QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>?'
-}
 
 function setLession(name) {
     console.log('chosen lession:', name);
@@ -88,23 +74,24 @@ function initLessionSelect() {
     });
 
     lessionsSelect.addEventListener('change', function() {
-        setLession(lessionsSelect.value)
+        setLession(lessionsSelect.value);
     });
 }
 
 function initInputDetection() {
     function checkInput() {
-        var value = input.value;
+        var value = inputField.value;
         var newChar = value.substring(value.length - 1);
-        input.value = '';
+        inputField.value = '';
         if (newChar !== '') {
             onNewChar(newChar);
         }
     }
 
-    input.addEventListener('keypress', checkInput);
-    input.addEventListener('keyup', checkInput);
-    setInterval(checkInput, 50)
+    // Very ugly, but works well for now...
+    inputField.addEventListener('keypress', checkInput);
+    inputField.addEventListener('keyup', checkInput);
+    setInterval(checkInput, 50);
 }
 
 var overlay = {
@@ -134,21 +121,17 @@ function initEditor() {
     editor = CodeMirror(editorDom, {
         lineWrapping: true,
         readOnly: true,
-        styleActiveLine: true,
+        styleActiveLine: true
 
     });
 
-    input = editor.getInputField();
+    inputField = editor.getInputField();
 
     editor.addOverlay(overlay);
 }
 
+// Boot.
 initEditor();
 initLessionSelect();
 initInputDetection();
 initKeyboardSelect();
-
-
-
-
-
