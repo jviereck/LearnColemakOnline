@@ -8,12 +8,11 @@ var currentLession = {
 };
 
 function setLession(name) {
-    console.log('chosen lession:', name);
-
     currentLession.index = 0;
     currentLession.value = lessions[name] || '';
     currentLession.error = {};
     editor.setValue(currentLession.value);
+    editor.focus();
 }
 
 function nextLessionChar() {
@@ -96,7 +95,6 @@ function initInputDetection() {
 
 var overlay = {
     token: function(stream) {
-        console.log('token');
         var error = currentLession.error;
         var ret = [];
         var pos = stream.pos;

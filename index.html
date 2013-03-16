@@ -37,8 +37,12 @@
         background-repeat: repeat-x;
       }
 
+      .CodeMirror-focused {
+        border: 1px solid #3C6AB4;
+      }
+
       .CodeMirror .cm-current {
-        border: 1px solid black;
+        background-color: #D4AB7D;
         background-position: bottom;
         background-repeat: repeat-x;
       }
@@ -49,6 +53,7 @@
 
     <div class="row">
       <div class="span8 offset2">
+        <a href="https://github.com/jviereck/LearnColemakOnline"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
         <h1>Learn Colemak Online</h1>
         <blockquote>
           <p>The QWERTY layout was designed in the 19th century to allow typewriter salesmen to easily type the word "typewriter" and to prevent typebars from sticking. We've been stuck with QWERTY ever since.</p>
@@ -60,6 +65,7 @@
         <legend>Let's get started</legend>
 
         <label>Choose your current keyboard layout:</label>
+        <small>Missing a keyboard layout? Please add it <a href="https://github.com/jviereck/LearnColemakOnline/blob/gh-pages/keymaps.js">here</a> using a PullRequest :)</small><br>
         <select id="keyboardSelect">
           <option>Please choose!</option>
           <option value="colemak">I use colemak</option>
@@ -67,7 +73,7 @@
         </select>
 
         <label>What lessions do you want to train?</label>
-        <small>Lessons are based on <a href="http://colemak.com/wiki/index.php?title=GNU_Typist">http://colemak.com/wiki/index.php?title=GNU_Typist</a></small>
+        <small>Lessons are based on <a href="http://colemak.com/wiki/index.php?title=GNU_Typist">http://colemak.com/wiki/index.php?title=GNU_Typist</a></small><br>
         <select id="lessionsSelect">
           <option>Please choose!</option>
         </select>
@@ -76,6 +82,9 @@
         </div>
         <img src="layout.png"></img>
         <small>Image from: <cite title="Keyboard layout source"><a href="http://colemak.com/">http://colemak.com/</a></cite> - 16. March 2013</small>
+
+        <legend>Who made this?</legend>
+        This page was initially created by <a href="https://twitter.com/jviereck">@jviereck</a>. The page is OpenSource and is available on <a href="https://github.com/jviereck/LearnColemakOnline">GitHub.</a><br><br><br>
       </div>
     </div>
     <script src="support/codemirror.js"></script>
