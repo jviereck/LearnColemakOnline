@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Learn Colemak Online</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn Colemak">
+    <meta name="author" content="Julian Viereck">
+
+    <link href="support/bootstrap.min.css" rel="stylesheet">
+    <link href="support/codemirror.css" rel="stylesheet">
+
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+
+      .CodeMirror {
+        border: 1px solid black;
+        height: 200px;
+        line-height: 1.2;
+        font-size: 1.5em;
+      }
+      .CodeMirror-cursor {
+        display: none !important;
+      }
+
+      .CodeMirror .cm-pass {
+        background-color: #8ECF6E;
+        background-position: bottom;
+        background-repeat: repeat-x;
+      }
+
+      .CodeMirror .cm-fail {
+        background-color: #C9605E;
+        background-position: bottom;
+        background-repeat: repeat-x;
+      }
+
+      .CodeMirror .cm-current {
+        border: 1px solid black;
+        background-position: bottom;
+        background-repeat: repeat-x;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="row">
+      <div class="span8 offset2">
+        <h1>Learn Colemak Online</h1>
+        <blockquote>
+          <p>The QWERTY layout was designed in the 19th century to allow typewriter salesmen to easily type the word "typewriter" and to prevent typebars from sticking. We've been stuck with QWERTY ever since.</p>
+          <p>Colemak is a modern alternative to the QWERTY and Dvorak layouts. It is designed for efficient and ergonomic touch typing in English.</p>
+          <p>Learning Colemak is a one-time investment that will allow you to enjoy faster and pain-free typing for the rest of your life. Colemak is now the 3rd most popular keyboard layout for touch typing in English, after QWERTY and Dvorak.</p>
+          <small>From: <cite title="Source Title"><a href="http://colemak.com/">http://colemak.com/</a></cite> - 16. March 2013</small>
+        </blockquote>
+
+        <legend>Let's get started</legend>
+
+        <label>Choose your current keyboard layout:</label>
+        <select id="keyboardSelect">
+          <option>Please choose!</option>
+          <option value="colemak">I use colemak</option>
+          <option value="en:us-mac">I use en:us (MacOsX)</option>
+        </select>
+
+        <label>What lessions do you want to train?</label>
+        <select id="lessionsSelect">
+          <option>Please choose!</option>
+        </select>
+
+        <div id="editor">
+        </div>
+        <img src="layout.png"></img>
+      </div>
+    </div>
+    <script src="support/codemirror.js"></script>
+    <script src="support/codemirror-active-line.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
